@@ -1,0 +1,57 @@
+
+# ============================================
+# OpenEdge NPU — Git Ignore Rules
+# ============================================
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+*.egg-info/
+
+# Verilator
+obj_dir/
+sim_build/
+*.vcd
+*.fst
+*.vvp
+*.wlf
+
+# Vivado
+.Xil/
+*.jou
+*.log
+*.str
+*.backup.jou
+*.backup.log
+*.cache/
+*.runs/
+*.sim/
+*.hw/
+*.ip_user_files/
+*.gen/
+*.srcs/sources_1/ip/
+*.Xil/
+
+# Editor and OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Local build outputs
+build/
+dist/
+tmp/
+temp/
+
+# Generated results (keep curated reports)
+results/*
+!results/.gitkeep
