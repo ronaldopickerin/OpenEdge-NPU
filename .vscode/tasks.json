@@ -1,0 +1,51 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "OpenEdge: Run RTL Tests",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/python",
+            "args": [
+                "-m",
+                "pytest",
+                "verification/test_smoke_runner.py",
+                "-v"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "OpenEdge: Lint RTL",
+            "type": "shell",
+            "command": "verilator",
+            "args": [
+                "--lint-only",
+                "-Wall",
+                "--top-module",
+                "smoke_test",
+                "rtl/core/smoke_test.sv"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
